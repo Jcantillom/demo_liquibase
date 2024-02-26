@@ -12,4 +12,9 @@
             <column name="nueva_columna" type="varchar(100)"/>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="juan cantillo">
+        <addColumn tableName="ejemplo">
+            <column name="direccion" type="varchar(100)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
