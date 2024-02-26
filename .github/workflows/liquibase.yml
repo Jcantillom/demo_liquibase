@@ -29,6 +29,9 @@ jobs:
       - name: Descargar mysql connector de la carpeta db del repositorio
         run: |
             ls -la
+            cd db
+            pwd 
+
           
 
       - name: Run Liquibase
