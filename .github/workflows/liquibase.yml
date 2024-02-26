@@ -31,4 +31,4 @@ jobs:
           /usr/local/bin/liquibase --changeLogFile=db/changelog.xml --url=jdbc:mysql://localhost:3306/demo_mysql --username=root --password= update
         env:
           LIQUIBASE_VERSION: 4.26.0
-        continue-on-error: true
+        continue-on-error: false
