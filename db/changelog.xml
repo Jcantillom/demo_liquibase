@@ -12,19 +12,4 @@
             <column name="nueva_columna" type="varchar(100)"/>
         </createTable>
     </changeSet>
-
-    <changeSet id="2" author="tú">
-        <addColumn tableName="ejemplo">
-            <column name="nueva_columna" type="varchar(100)"/>
-        </addColumn>
-    </changeSet>
-
-    <changeSet id="3" author="tú">
-        <dropColumn tableName="ejemplo" columnName="nueva_columna"/>
-    </changeSet>
-    
-    <changeSet id="4" author="tú">
-        <dropTable tableName="ejemplo"/>
-    </changeSet>
-
 </databaseChangeLog>
