@@ -25,10 +25,16 @@ jobs:
           tar -xzf liquibase.tar.gz
           chmod +x liquibase
           sudo mv liquibase /usr/local/bin/
+      #descargar mysql connector desde el repository
+      - name: Descargar mysql connector
+        run: |
+          wget -O mysql-connector-java-8.0.27.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar
+          mv mysql-connector-java-8.0.27.jar /usr/local/bin/
 
       - name: Run Liquibase
         run: |
-          /usr/local/bin/liquibase --changeLogFile=db/changelog.xml --url=jdbc:mysql://localhost:3306/demo_mysql --username=root --password= update
+          ./liquibase/bin/liquibase update --url=jdbc:mysql://localhost:3
+
         env:
           LIQUIBASE_VERSION: 4.26.0
         continue-on-error: false
