@@ -1,0 +1,26 @@
+name: Liquibase
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  liquibase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Run Liquibase
+        run: |
+          liquibase --changeLogFile=db/changelog.xml --url=jdbc:mysql://localhost:3306/demo_mysql --username=root --password= update
+        env:
+          LIQUIBASE_VERSION: 4.26.0
+        continue-on-error: true
