@@ -30,6 +30,11 @@ jobs:
         run: |
           liquibase update
 
+      #info de tablas de la db
+      - name: Run Liquibase
+        run: |
+          liquibase status                 
+
         env:
           LIQUIBASE_VERSION: 4.26.0
         continue-on-error: false
