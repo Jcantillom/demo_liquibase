@@ -31,9 +31,12 @@ jobs:
           liquibase update
 
       #info de tablas de la db
-      - name: Run Liquibase
+      - name: info de tablas de la db
         run: |
-          liquibase status                 
+          liquibase info:schema:drop
+          liquibase info:schema:create
+          liquibase info:changelog:drop
+          liquibase info:changelog:create             
 
         env:
           LIQUIBASE_VERSION: 4.26.0
