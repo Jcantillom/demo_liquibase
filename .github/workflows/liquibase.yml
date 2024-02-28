@@ -33,7 +33,7 @@ jobs:
       #info de tablas de la db
       - name: info de tablas de la db
         run: |
-          liquibase status            
+          liquibase history > history.txt            
 
         env:
           LIQUIBASE_VERSION: 4.26.0
