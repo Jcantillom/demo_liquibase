@@ -33,10 +33,7 @@ jobs:
       #info de tablas de la db
       - name: info de tablas de la db
         run: |
-          liquibase info:schema:drop
-          liquibase info:schema:create
-          liquibase info:changelog:drop
-          liquibase info:changelog:create             
+          liquibase status            
 
         env:
           LIQUIBASE_VERSION: 4.26.0
