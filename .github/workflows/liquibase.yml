@@ -34,7 +34,6 @@ jobs:
         run: |
           liquibase history
           liquibase status
-          liquibase changeLog
 
         env:
           LIQUIBASE_VERSION: 4.26.0
