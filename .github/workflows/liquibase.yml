@@ -24,7 +24,7 @@ jobs:
           wget -O- https://repo.liquibase.com/liquibase.asc | gpg --dearmor > liquibase-keyring.gpg && \
           cat liquibase-keyring.gpg | sudo tee /usr/share/keyrings/liquibase-keyring.gpg > /dev/null && \
           echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/liquibase-keyring.gpg] https://repo.liquibase.com stable main' | sudo tee /etc/apt/sources.list.d/liquibase.list && \
-          sudo apt-get update && sudo apt-get install liquibase        
+          sudo apt-get update && sudo apt-get install liquibase
 
       - name: Run Liquibase
         run: |
@@ -33,12 +33,8 @@ jobs:
       #info de tablas de la db
       - name: info de tablas de la db
         run: |
-          liquibase history > history.txt            
-      - name: Listar archivos en el directorio de trabajo
-        run: ls -l
-      - name: Visualizar contenido de history.txt
-        run: cat history.txt
-        
+          liquibase history --verbose
+
         env:
           LIQUIBASE_VERSION: 4.26.0
         continue-on-error: false
