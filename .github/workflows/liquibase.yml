@@ -34,7 +34,11 @@ jobs:
       - name: info de tablas de la db
         run: |
           liquibase history > history.txt            
-
+      - name: Listar archivos en el directorio de trabajo
+        run: ls -l
+      - name: Visualizar contenido de history.txt
+        run: cat history.txt
+        
         env:
           LIQUIBASE_VERSION: 4.26.0
         continue-on-error: false
